@@ -11,7 +11,8 @@
 #ifndef __MBCI_ENCODER_H__
 #define __MBCI_ENCODER_H__
 
-struct mbci_encoder {
+struct mbci_encoder
+{
     /**
      * @brief 初始化编码器设备。
      *
@@ -28,6 +29,12 @@ struct mbci_encoder {
      *
      */
     void (*reset)(void);
+
+    /**
+     * @brief 私有数据，供驱动开发者使用。
+     *
+     */
+    void *priv;
 };
 
 #define mbci_encoder_init(encoder) ((encoder)->init())

@@ -53,6 +53,12 @@ struct mbci_imu {
      * 
      */
     void (*read_euler)(float *pitch, float *roll, float *yaw);
+
+        /**
+     * @brief 私有数据，供驱动开发者使用。
+     * 
+     */
+    void *priv;
 };
 
 #define mbci_imu_init(imu) ((imu)->init())
