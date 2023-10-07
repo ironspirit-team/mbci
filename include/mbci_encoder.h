@@ -17,18 +17,18 @@ struct mbci_encoder
      * @brief 初始化编码器设备。
      *
      */
-    void (*init)(void);
+    void (*init)(struct mbci_encoder *self);
     /**
      * @brief 读取编码器的计数值。
      *
      */
-    signed long long (*read)(void);
+    signed long long (*read)(struct mbci_encoder *self);
 
     /**
      * @brief 重置编码器的计数值。
      *
      */
-    void (*reset)(void);
+    void (*reset)(struct mbci_encoder *self);
 
     /**
      * @brief 私有数据，供驱动开发者使用。
